@@ -1,0 +1,66 @@
+.preview {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1200;
+  background: rgba(200,200,200,.8);
+
+  #coverprint {
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    img {
+      max-width: 95%;
+      max-height: 95%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto auto;
+      @include box-shadow(2px 2px 3px 0px rgba(50, 50, 50, 0.3));
+      outline: 1px solid #efefef;
+    }
+  }
+  #loading {
+    position: absolute;
+    top:0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+
+    div {
+      position: relative;
+      width:100%;
+      height: 100%;
+    }
+    img {
+      width: 43px;
+      height: 11px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -5px;
+      margin-left: -21px;
+    }
+  }
+  @include at-breakpoint($pad) {
+    display: block;
+    position: relative;
+    // min-height: 75%;
+    top: inherit;
+    bottom: inherit;
+    left: inherit;
+    right: inherit;
+    background: none;
+    margin-top: -70px;
+    z-index: 1000;
+  }
+}

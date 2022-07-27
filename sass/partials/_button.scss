@@ -1,0 +1,28 @@
+.btnSubmit {
+  height:60px;
+  width: 162px;
+  border:none; background:none;
+  text-indent:-9999;
+  background:url(../images/submitbtn.png);
+  background-position: 0 -60px;
+  outline:0;
+  vertical-align: top;
+}
+.btnSubmit:hover,
+.btnSubmit:focus {
+  background-position: 0 0;
+}
+.fbSubmit {
+  height:60px;
+  width: 162px;
+  border:none; background:none;
+  text-indent:-9999;
+  background:url(../images/facebookbtn.png);
+  background-position: 0 -60px;
+  outline:0;
+  vertical-align: top;
+}
+.fbSubmit:hover,
+.fbSubmit:focus {
+  background-position: 0 0;
+}

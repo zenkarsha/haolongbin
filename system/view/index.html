@@ -1,0 +1,80 @@
+---
+$title
+$description
+$path
+$object-name
+---
+
+<div class="row">
+  <div class="col-sm-6 col-md-7 col-lg-8" style="height:inherit">
+    <div class="preview">
+      <div id="rotate_container">
+        <div id="rotate_object">
+          <img src="images/object/1.png" id="object_img">
+        </div>
+      </div>
+      <div id="coverprint"><div class="preview_bg"><img src="upload/sample.jpg" id="previewimg"></div></div>
+      <div id="loading"><div class="drop"><img src="images/loading.gif"></div></div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-5 col-lg-4 text-center" id="generator">
+    <h1>{{$title}}</h1>
+    <h2>{{$description}}</h2>
+    <form role="form" action="generate" id="form" method="post">
+      <div id="settings">
+        <div class="col-sm-12 hide">
+          <div class="form-group">
+            <label for="part_x">起始座標 X</label>
+            <input type="text" class="form-control" id="part_x" name="part_x" value="" readonly="readonly">
+          </div>
+          <div class="form-group">
+            <label for="part_y">起始座標 Y</label>
+            <input type="text" class="form-control" id="part_y" name="part_y" value="" readonly="readonly">
+          </div>
+          <div class="form-group">
+            <label for="part_w">物件寬度</label>
+            <input type="text" class="form-control" id="part_w" name="part_w" value="" readonly="readonly">
+          </div>
+          <div class="form-group">
+            <label for="part_h">物件高度</label>
+            <input type="text" class="form-control" id="part_h" name="part_h" value="" readonly="readonly">
+          </div>
+          <div class="form-group">
+            <label for="degrees">旋轉角度</label>
+            <input type="text" class="form-control" id="degrees" name="degrees" value="0" readonly="readonly">
+          </div>
+        </div>
+        <div class="col-sm-12" style="margin-bottom:10px; padding:10px 0; border-bottom:1px solid #ccc; border-top:1px solid #ccc;">
+          【上傳背景圖片】<br>將圖片檔拖放到頁面上任何地方<br>或 <a class="uploadBtn">按此上傳圖片</a><br><br>
+          【使用方法】<br>請移動、縮放 {{$object-name}} 至合適位置<br>完成後點擊下方按鈕下載
+          </div>
+        <div class="col-sm-12 hide">
+          <label for="role_select">選擇合成物件</label>
+          <select name="role_select" id="role_select">
+            <option value="1" data-imagesrc="images/object/1.png"></option>
+          </select>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="formbuttons">
+        <input type="hidden" value="1" name="role" id="role">
+        <input type="hidden" value="sample.jpg" name="source" id="source">
+        <input type="hidden" value="" name="directpost" id="directpost">
+        <input type="button" value="下載圖片" class="submit btn btn-primary btn-lg" id="normalSubmit" style="margin-bottom:10px;">
+        <input type="button" value="產生為背景" class="submit btn btn-success btn-lg" id="genbgSubmit" style="margin-bottom:10px;">
+        <div id="plzlike" class="plzlike">圖片產生成功，請幫忙按讚哦！謝謝。</div>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="show"><i class="glyphicon glyphicon-cog"></i></div>
+
+<form method="post" action="uploader" enctype="multipart/form-data">
+    <input type="hidden" value="sample.jpg" id="filename" name="filename">
+    <input type="file" name="Filedata" id="uploadInput">
+</form>
+<img id="truesize" style="position:absolute; width:auto; max-width:99999%; left:-99999%; top:-99999%; z-index:-9999;">
+<img id="role_truesize" style="position:absolute; width:auto; max-width:99999%; left:-99999%; top:-99999%; z-index:-9999;">
+<div id="rotateCopy" style="opacity: 0;filter: alpha(opacity=0);"></div>
+<div id="uploading">圖片上傳中，請稍後</div>
+<div id="generating">背景圖片產生中，請稍後</div>
